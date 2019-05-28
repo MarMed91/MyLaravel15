@@ -14,13 +14,13 @@ class AddForeignKeys2 extends Migration
     public function up()
     {
 
-      Schema::table('post_category', function (Blueprint $table) {
-        $table->foreign('post_id', 'post')
-                ->references('id')
-                ->on('posts');
+      Schema::table('category_post', function (Blueprint $table) {
         $table->foreign('category_id', 'category')
                 ->references('id')
                 ->on('categories');
+        $table->foreign('post_id', 'post')
+                ->references('id')
+                ->on('posts');
         });
     }
 
@@ -32,10 +32,10 @@ class AddForeignKeys2 extends Migration
     public function down()
     {
 
-      Schema::table('post_category', function (Blueprint $table) {
+      Schema::table('category_post', function (Blueprint $table) {
 
-          $table->dropForeign('post');
           $table->dropForeign('category');
-      });
+          $table->dropForeign('post');
+        });
     }
 }
