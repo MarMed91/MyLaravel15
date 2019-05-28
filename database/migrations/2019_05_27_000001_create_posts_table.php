@@ -18,7 +18,6 @@ class CreatePostsTable extends Migration
             $table->string('author');
             $table->string('title');
             $table->text('content');
-            $table->bigInteger('category_id')->unsigned()->index();
             $table->timestamps();
         });
     }
