@@ -17,7 +17,6 @@ class CreateCategoriesTable extends Migration
             $table->bigIncrements('id');
             $table->string('category_name')->unique();
             $table->integer('number_of_posts');
-            $table->bigInteger('post_id')->unsigned()->index();
             $table->timestamps();
         });
     }
