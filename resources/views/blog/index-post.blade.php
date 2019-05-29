@@ -37,7 +37,7 @@
             </table>
             <a href="{{ route('post.create') }}">CREATE NEW POST</a>
         </div>
-  @stop
+  
 
 
 
