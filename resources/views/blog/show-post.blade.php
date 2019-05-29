@@ -31,14 +31,14 @@
         </table>
         <table border="1">
           <thead>
-            <td>CATEGORY NAME</td>
+            <td><a href="{{ route('category', $category->category_name) }}">CATEGORY NAME</a></td>
             <td>NUMBER OF POSTS</td>
           </thead>
 
           @foreach ($post -> categories as $category)
 
             <tr>
-              <td>{{ $category -> category_name }}</td>
+              <td>{{ $category -> category_name }}</a></td>
               <td>{{ $category -> number_of_posts }}</td>
             </tr>
           @endforeach
