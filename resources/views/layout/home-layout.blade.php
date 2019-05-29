@@ -9,12 +9,33 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     </head>
     <body>
-    <header>
-      <h1>Blog</h1>
-    </header>
-    @yield('content')
-    <footer>
-      <h1>Blog-footer</h1>
-    </footer>
+      <header>
+        <a href="{{ route('post.index') }}">
+        <h1>Laravel Blog Header</h1>
+        </a>
+      </header>
+
+      @if ($errors->any())
+
+        <div class="alert alert-danger">
+            <ul>
+              @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+        </div>
+        @endif
+        @if (session('success'))
+        <div class="alert alert-danger">
+            <div class="container">
+                {{ session('success') }}
+            </div>
+        </div>
+        @endif
+      @yield('content')
+      <footer>
+          <h1>Laravel Blog Footer</h1>
+      </footer>
+
     </body>
 </html>

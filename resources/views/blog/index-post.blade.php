@@ -17,13 +17,9 @@
             @foreach ($posts as $post)
 
               <tr>
-                <td>{{ $post -> author }}</td>
-                <td>{{ $post -> title }}</td>
-                <td>{{ $post -> content }}</td>
-
-                <td>{{ $post -> category -> name }}.
-                    {{ $post -> category -> street }}.
-                    {{ $post -> category -> city }}</td>
+                <td>{{ $post ->author }}</td>
+                <td>{{ $post ->title }}</td>
+                <td>{{ $post ->content }}</td>
 
                 <td><a href="{{ route('post.edit', $post->id) }}"><i class="fas fa-edit"></i></a></td>
                 <td>
@@ -41,7 +37,6 @@
             </table>
             <a href="{{ route('post.create') }}">CREATE NEW POST</a>
         </div>
-
   @stop
 
 

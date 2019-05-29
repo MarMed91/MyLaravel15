@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('layout.home-layout');
 });
+
+Route::resource('admin/post', 'PostController');
+Route::get('category', 'CategoryController@getPostByCategoryName');
