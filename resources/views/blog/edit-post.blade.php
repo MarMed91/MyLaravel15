@@ -19,24 +19,10 @@
               <label for="content">Content</label>
               <input type="text" name="content" value="{{ $post->content }}">
             </div>
-            <div>
-              <label for="birth_year">BIRTH YEAR</label>
-              <select class="birth_year" name="birth_year">
-                @for ($i = 1920; $i<=2000; $i++)
-                  <option value="{{$i}}" > @if ($i == $employee -> birth_year)
-                      selected
-                    @endif
-                    {{$i}}></option>
-                @endfor
-              </select>
-            </div>
+
             <div class="form-group">
                 <label for="category_id"></label><br>
-                <select  name="category_id">
-                  @foreach ($categories as $category)
-                    <option value={{ $category->id }}>{{ $category->category_name }} {{ $category->number_of_posts }}</option>
-                  @endforeach
-                </select>
+                
             </div>
             <button type="submit" name="button">Update Post</button>
           </form>

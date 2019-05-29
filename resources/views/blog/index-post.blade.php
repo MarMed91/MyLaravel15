@@ -17,10 +17,9 @@
             @foreach ($posts as $post)
 
               <tr>
-                <td>{{ $post ->author }}</td>
+                <td><a href="{{ route('post.show', $post->id) }}">{{ $post ->author }}</a></td>
                 <td>{{ $post ->title }}</td>
                 <td>{{ $post ->content }}</td>
-
                 <td><a href="{{ route('post.edit', $post->id) }}"><i class="fas fa-edit"></i></a></td>
                 <td>
                   <form action="{{ route('post.destroy', $post->id) }}" method="post">
@@ -37,7 +36,7 @@
             </table>
             <a href="{{ route('post.create') }}">CREATE NEW POST</a>
         </div>
-  
+
 
 
 

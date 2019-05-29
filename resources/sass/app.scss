@@ -4,13 +4,14 @@
 // Variables
 @import 'variables';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+
+@import '~font-awesome/scss/font-awesome';
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
 
   header {
     background: red;
@@ -25,9 +26,8 @@
     text-align: center;
   }
 
-  td button {
-    width: 50px;
-    height: 30px;
+   a i {
+    font-size: 30px;
     background: red;
     color: white;
   }

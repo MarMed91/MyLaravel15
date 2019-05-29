@@ -8,7 +8,7 @@ class CategoryController extends Controller
 {
     function getPostByCategoryName($category_name) {
 
-      $category = Category::where('name', '=', $category_name)
+      $category = Category::where('name', '=', $category_name);
       return view('blog.category', compact('category'));
     }
 }
