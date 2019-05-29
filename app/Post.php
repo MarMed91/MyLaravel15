@@ -12,7 +12,7 @@ class Post extends Model
     'content'
   ];
 
-  function category() {
+  function categories() {
 
     return $this->belongsToMany(Category::class);
   }

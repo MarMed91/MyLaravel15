@@ -13,7 +13,8 @@ class CreateCategoryPostTable extends Migration
      */
     public function up()
     {
-        Schema::create('category__post', function (Blueprint $table) {
+        Schema::create('category_post', function (Blueprint $table) {
+
             $table->bigIncrements('id');
             $table->bigInteger('category_id')->unsigned()->index();
             $table->bigInteger('post_id')->unsigned()->index();
@@ -28,6 +29,6 @@ class CreateCategoryPostTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('category__post');
+        Schema::dropIfExists('category_post');
     }
 }
