@@ -3073,8 +3073,9 @@ table {
   text-align: center;
 }
 
-a i {
-  font-size: 30px;
+i {
+  height: 100%;
+  width: 100%;
   background: red;
   color: white;
 }

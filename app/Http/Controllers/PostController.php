@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest; // importiamo ComputerRequest
 use App\Post;
 use App\Category;
 
@@ -75,7 +76,10 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, $id)
     {
-        //
+        $valideData = $request->validated();
+        Post::whereId($id)->update($valideData);
+
+        return redirect('admin/post');
     }
 
     /**

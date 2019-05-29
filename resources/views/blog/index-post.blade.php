@@ -20,13 +20,13 @@
                 <td><a href="{{ route('post.show', $post->id) }}">{{ $post ->author }}</a></td>
                 <td>{{ $post ->title }}</td>
                 <td>{{ $post ->content }}</td>
-                <td><a href="{{ route('post.edit', $post->id) }}"><i class="fas fa-edit"></i></a></td>
+                <td><a href="{{ route('post.edit', $post->id) }}"><i class="fa fa-edit"></i></a></td>
                 <td>
                   <form action="{{ route('post.destroy', $post->id) }}" method="post">
                     @csrf
                     @method('DELETE')
                     <button type="submit" name="button">
-                      <i class="fas fa-trash-alt"></i>
+                      <i class="fa fa-trash-alt"></i>
                     </button>
                   </form>
                 </td>
