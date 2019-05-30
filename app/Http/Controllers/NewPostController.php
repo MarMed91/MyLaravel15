@@ -20,9 +20,9 @@ class NewPostController extends Controller
       $validatedData = $request->validated();
 
       $post = Post::create($validatedData);
-      $categoriesId = $validatedData['categories'];
-
+      $categoriesId = $validatedData['categories']; //se dice undefined variable fare attenzione a postRequest faree dd() se non metti categories nel request
       $categories = Category::find($categoriesId);
+
       $post -> categories() -> attach($categories);
 
       return redirect('/');

@@ -16,7 +16,13 @@ class EditPostController extends Controller
     }
 
     function updatePost(PostRequest $request, $id) {
+      dd($request);
+      $validatedData = $request->validated();
 
+      $post = Post::whereId($id)->update($validatedData);
+      $categoriesId = $validateData['categories'];
+
+      return redirect('/');
 
     }
 }

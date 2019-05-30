@@ -18,13 +18,14 @@
               <tr>
                 <td>{{ $post->author }}</td>
                 <td>
-                  @foreach ($post -> categories as $category)
+                  @foreach ($post -> categories as $category) //le categorie del post;
                   <a href="{{ route('categoryName', $category->category_name) }}">
                     {{ $category->category_name }}<br>
                   </a>
                   @endforeach
                 </td>
                 <td>{{ $post->title }}</td>
+                <td><a href="{{ route('EditPost', $post->id) }}"><i class="fa fa-edit"></i></a></td>
               </tr>
               @endforeach
             </tbody>
