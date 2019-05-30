@@ -19,7 +19,10 @@
           <input type="text" name="content" value="">
         </div>
         <div>
-        
+          @foreach ($categories as $category)
+            <input type="checkbox" name="categories[]" value="{{ $category->id }}">{{ $category->category_name }}<br>
+          @endforeach
+
         </div>
         <button type="submit" name="SAVE NEW CAR">SAVE NEW CAR</button>
       </form>

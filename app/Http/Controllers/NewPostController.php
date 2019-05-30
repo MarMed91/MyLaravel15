@@ -18,12 +18,12 @@ class NewPostController extends Controller
     function saveNewPost(PostRequest $request) {
 
       $validatedData = $request->validated();
-      dd($validatedData);
 
       $post = Post::create($validatedData);
       $categoriesId = $validatedData['categories'];
       $categories = Category::find($categoriesId);
+      
       $post->categories()->attach($categories);
-      return redirect('home');
+      return redirect('/');
     }
 }
