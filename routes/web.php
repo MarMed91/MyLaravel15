@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('layout.home-layout');
-});
-
-Route::resource('admin/post', 'PostController');
-Route::get('category', 'CategoryController@getPostByCategoryName');
+Route::get('/', 'HomeController@getLast5post')->name('home');
+Route::get('category/{name}', 'CategoryController@getPostByCategoryName')->name('categoryName');
+Route::get('admin/post/new', 'NewPostController@createNewPost')->name('newPost');
+Route::post('admin/post/new', 'NewPostController@saveNewPost')->name('saveNewPost');

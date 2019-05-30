@@ -14,8 +14,8 @@ class PostSeeder extends Seeder
         factory(App\Post::class, 5)->make()
                   ->each(function($post) {
                     $category = App\Category::inRandomOrder()->first();
-                    $post->categories()->attach($category);
                     $post->save();
+                    $post->categories()->attach($category);
                   });
     }
 }

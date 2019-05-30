@@ -10,10 +10,10 @@
     </head>
     <body>
       <header>
-        <a href="{{ route('post.index') }}">
         <h1>Laravel Blog Header</h1>
         </a>
       </header>
+      @yield('content')
 
       @if ($errors->any())
 
@@ -32,7 +32,6 @@
             </div>
         </div>
         @endif
-      @yield('content')
       <footer>
           <h1>Laravel Blog Footer</h1>
       </footer>

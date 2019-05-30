@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Category::class, function (Faker $faker) {
     return [
-      "category_name" => $faker->word,
+      "category_name" => $faker->unique()->word,
       "number_of_posts" => $faker->randomDigitNotNull,
     ];
 });
