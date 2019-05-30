@@ -26,7 +26,8 @@ class PostRequest extends FormRequest
         return [
           'author' => 'required',
           'title' => 'required',
-          'content' => 'required'
+          'content' => 'required',// se il post non ha categorie lasciare vuoto altrimenti mettere required
+          'categories' => 'required'// se il post non ha categorie lasciare vuoto altrimenti mettere required
         ];
     }
 }

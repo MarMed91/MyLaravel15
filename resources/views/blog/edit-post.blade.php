@@ -4,7 +4,7 @@
 
     <h1>EDIT Post</h1>
     <div class="edit">
-        <form action="{{ route('post.update', $post->id) }}" method="post">
+        <form action="{{ route('editPost', $post->id) }}" method="post">
             @csrf
             @method('PATCH')
             <div>
@@ -20,9 +20,10 @@
               <input type="text" name="content" value="{{ $post->content }}">
             </div>
 
-            <div class="form-group">
-                <label for="category_id"></label><br>
-                
+            <div>
+                @foreach ($categories as $category)
+                  <input type="checkbox" name="categories[]" value="{{ $category->id }}">{{ $category->category_name }}<br>
+                @endforeach
             </div>
             <button type="submit" name="button">Update Post</button>
           </form>

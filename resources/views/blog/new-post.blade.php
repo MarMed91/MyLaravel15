@@ -1,8 +1,9 @@
 @extends('layout.home-layout')
 
 @section('content')
-  <h1>CREATE NEW POST</h1>
+  
   <div class="edit">
+      <h1>CREATE NEW POST</h1>
       <form method="post" action="{{ route('saveNewPost') }}">
         @csrf
         @method('POST')
@@ -24,7 +25,7 @@
           @endforeach
 
         </div>
-        <button type="submit" name="SAVE NEW CAR">SAVE NEW CAR</button>
+        <button type="submit" name="SAVE NEW CAR">SAVE NEW post</button>
       </form>
   </div>
 @stop

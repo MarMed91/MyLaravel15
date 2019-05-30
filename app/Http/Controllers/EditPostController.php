@@ -3,14 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PostRequest;
+use App\Category;
+use App\Post;
 
 class EditPostController extends Controller
 {
-    function editPost() {
+    function editPost($id) {
 
+      $post = Post::findOrFail($id);
+      return view('blog.edit-post', compact('post'));
     }
 
-    function updatePost() {
+    function updatePost(PostRequest $request, $id) {
+
 
     }
 }

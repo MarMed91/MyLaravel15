@@ -12,7 +12,7 @@ class NewPostController extends Controller
     function createNewPost() {
 
       $categories = Category::all();
-      return view('blog.new-post');
+      return view('blog.new-post', compact('categories')); //undefined richiede compact;
     }
 
     function saveNewPost(PostRequest $request) {
@@ -21,9 +21,10 @@ class NewPostController extends Controller
 
       $post = Post::create($validatedData);
       $categoriesId = $validatedData['categories'];
+
       $categories = Category::find($categoriesId);
-      
-      $post->categories()->attach($categories);
+      $post -> categories() -> attach($categories);
+
       return redirect('/');
     }
 }

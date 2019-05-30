@@ -4,7 +4,7 @@
 
 
       <div class="show">
-        <h1>Posts</h1>
+        <h1>{{ $category->category_name }}</h1>
 
         <table border="1">
           <thead>
@@ -13,7 +13,7 @@
             <td>author</td>
           </thead>
           <tbody>
-            @foreach ($category -> posts as $post)
+            @foreach ($category -> posts as $post) //foreach sui post della categoria
               <tr>
                 <td>{{ $post->title }}</td>
                 <td>

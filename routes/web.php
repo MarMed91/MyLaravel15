@@ -15,5 +15,5 @@ Route::get('/', 'HomeController@getLast5post')->name('home');
 Route::get('category/{name}', 'CategoryController@getPostByCategoryName')->name('categoryName');
 Route::get('admin/post/new', 'NewPostController@createNewPost')->name('newPost');
 Route::post('admin/post/new', 'NewPostController@saveNewPost')->name('saveNewPost');
-Route::get('admin/post/edit/{id}', 'EditPostController@createNewPost')->name('EditPostControllerPost');
-Route::post('admin/post/edit/{id}', 'EditPostController@saveNewPost')->name('UpdatePost');
+Route::get('admin/post/edit/{id}', 'EditPostController@editPost')->name('EditPost');
+Route::patch('admin/post/edit/{id}', 'EditPostController@updatePost')->name('UpdatePost'); 
