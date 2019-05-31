@@ -6,7 +6,11 @@
       <div class="show">
         <a href="{{ route('newPost') }}">CREATE NEW POST</a>
         <h1>Posts</h1>
+        <form class="" action="index.html" method="post">
+          <div class="">
 
+          </div>
+        </form>
         <table border="1">
           <thead>
             <td>AUTHOR</td>

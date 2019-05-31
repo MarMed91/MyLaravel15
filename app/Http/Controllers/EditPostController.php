@@ -19,7 +19,7 @@ class EditPostController extends Controller
 
       $validatedData = $request->validated();
 
-      $post = Post::whereId($id)->update($validatedData);
+      $post = Post::findOrFail($id)->update($validatedData);
       return redirect('/');
     }
 }
