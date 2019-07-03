@@ -113,7 +113,6 @@ var buildURL = __webpack_require__(/*! ./../helpers/buildURL */ "./node_modules/
 var parseHeaders = __webpack_require__(/*! ./../helpers/parseHeaders */ "./node_modules/axios/lib/helpers/parseHeaders.js");
 var isURLSameOrigin = __webpack_require__(/*! ./../helpers/isURLSameOrigin */ "./node_modules/axios/lib/helpers/isURLSameOrigin.js");
 var createError = __webpack_require__(/*! ../core/createError */ "./node_modules/axios/lib/core/createError.js");
-var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window)) || __webpack_require__(/*! ./../helpers/btoa */ "./node_modules/axios/lib/helpers/btoa.js");
 
 module.exports = function xhrAdapter(config) {
   return new Promise(function dispatchXhrRequest(resolve, reject) {
@@ -125,22 +124,6 @@ module.exports = function xhrAdapter(config) {
     }
 
     var request = new XMLHttpRequest();
-    var loadEvent = 'onreadystatechange';
-    var xDomain = false;
-
-    // For IE 8/9 CORS support
-    // Only supports POST and GET calls and doesn't returns the response headers.
-    // DON'T do this for testing b/c XMLHttpRequest is mocked, not XDomainRequest.
-    if ( true &&
-        typeof window !== 'undefined' &&
-        window.XDomainRequest && !('withCredentials' in request) &&
-        !isURLSameOrigin(config.url)) {
-      request = new window.XDomainRequest();
-      loadEvent = 'onload';
-      xDomain = true;
-      request.onprogress = function handleProgress() {};
-      request.ontimeout = function handleTimeout() {};
-    }
 
     // HTTP basic authentication
     if (config.auth) {
@@ -155,8 +138,8 @@ module.exports = function xhrAdapter(config) {
     request.timeout = config.timeout;
 
     // Listen for ready state
-    request[loadEvent] = function handleLoad() {
-      if (!request || (request.readyState !== 4 && !xDomain)) {
+    request.onreadystatechange = function handleLoad() {
+      if (!request || request.readyState !== 4) {
         return;
       }
 
@@ -173,9 +156,8 @@ module.exports = function xhrAdapter(config) {
       var responseData = !config.responseType || config.responseType === 'text' ? request.responseText : request.response;
       var response = {
         data: responseData,
-        // IE sends 1223 instead of 204 (https://github.com/axios/axios/issues/201)
-        status: request.status === 1223 ? 204 : request.status,
-        statusText: request.status === 1223 ? 'No Content' : request.statusText,
+        status: request.status,
+        statusText: request.statusText,
         headers: responseHeaders,
         config: config,
         request: request
@@ -984,54 +966,6 @@ module.exports = function bind(fn, thisArg) {
     return fn.apply(thisArg, args);
   };
 };
-
-
-/***/ }),
-
-/***/ "./node_modules/axios/lib/helpers/btoa.js":
-/*!************************************************!*\
-  !*** ./node_modules/axios/lib/helpers/btoa.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-// btoa polyfill for IE<10 courtesy https://github.com/davidchambers/Base64.js
-
-var chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
-
-function E() {
-  this.message = 'String contains an invalid character';
-}
-E.prototype = new Error;
-E.prototype.code = 5;
-E.prototype.name = 'InvalidCharacterError';
-
-function btoa(input) {
-  var str = String(input);
-  var output = '';
-  for (
-    // initialize result and counter
-    var block, charCode, idx = 0, map = chars;
-    // if the next str index does not exist:
-    //   change the mapping table to "="
-    //   check if d has no fractional digits
-    str.charAt(idx | 0) || (map = '=', idx % 1);
-    // "8 - idx % 1 * 8" generates the sequence 2, 4, 6, 8
-    output += map.charAt(63 & block >> 8 - idx % 1 * 8)
-  ) {
-    charCode = str.charCodeAt(idx += 3 / 4);
-    if (charCode > 0xFF) {
-      throw new E();
-    }
-    block = block << 8 | charCode;
-  }
-  return output;
-}
-
-module.exports = btoa;
 
 
 /***/ }),
@@ -6246,19 +6180,9 @@ __webpack_require__.r(__webpack_exports__);
  * @license  MIT
  */
 
-// The _isBuffer check is for Safari 5-7 support, because it's missing
-// Object.prototype.constructor. Remove this eventually
-module.exports = function (obj) {
-  return obj != null && (isBuffer(obj) || isSlowBuffer(obj) || !!obj._isBuffer)
-}
-
-function isBuffer (obj) {
-  return !!obj.constructor && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
-}
-
-// For Node v0.10 support. Remove this eventually.
-function isSlowBuffer (obj) {
-  return typeof obj.readFloatLE === 'function' && typeof obj.slice === 'function' && isBuffer(obj.slice(0, 0))
+module.exports = function isBuffer (obj) {
+  return obj != null && obj.constructor != null &&
+    typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj)
 }
 
 
@@ -49426,7 +49350,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/lib/loader.js):\n\n@import '~font-awesome/scss/font-awesome';\r\n       ^\n      Can't find stylesheet to import.\n  ╷\n8 │ @import '~font-awesome/scss/font-awesome';\r\n  │         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  ╵\n  stdin 8:9  root stylesheet\n      in /var/www/html/MyLaravel15/resources/sass/app.scss (line 8, column 9)\n    at runLoaders (/var/www/html/MyLaravel15/node_modules/webpack/lib/NormalModule.js:302:20)\n    at /var/www/html/MyLaravel15/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /var/www/html/MyLaravel15/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/var/www/html/MyLaravel15/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at render (/var/www/html/MyLaravel15/node_modules/sass-loader/lib/loader.js:52:13)\n    at Function.$2 (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:23927:48)\n    at xS.$2 (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:14932:15)\n    at vX.wa (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8897:42)\n    at vX.w9 (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8899:32)\n    at iM.vm (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8296:46)\n    at vj.$0 (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8432:7)\n    at Object.eP (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:1465:80)\n    at ak.bc (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8354:3)\n    at j_.bc (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8291:25)\n    at j_.cA (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8278:6)\n    at pL.cA (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8080:35)\n    at Object.m (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:1348:19)\n    at /var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:4974:51\n    at yi.a (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:1356:71)\n    at yi.$2 (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8095:23)\n    at wU.$2 (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8090:25)\n    at vX.wa (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8897:42)\n    at vX.w9 (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8899:32)\n    at iM.vm (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8296:46)\n    at vj.$0 (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8432:7)\n    at Object.eP (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:1465:80)\n    at ak.bc (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8354:3)\n    at j_.bc (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8291:25)\n    at j_.cA (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8278:6)\n    at Object.eval (eval at DS (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:628:8), <anonymous>:2:37)\n    at vX.wa (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8897:42)\n    at vX.w9 (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8899:32)\n    at iM.vm (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8296:46)\n    at vj.$0 (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8432:7)\n    at Object.eP (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:1465:80)\n    at ak.bc (/var/www/html/MyLaravel15/node_modules/sass/sass.dart.js:8354:3)");
 
 /***/ }),
 

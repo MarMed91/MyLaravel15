@@ -1,0 +1,56 @@
+[2019-06-02 20:32:25] local.ERROR: Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Illuminate\\Routing\\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') at /var/www/html/MyLaravel18/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 {main}
+"} 
+[2019-06-02 20:32:43] local.ERROR: Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Illuminate\\Routing\\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') at /var/www/html/MyLaravel18/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 {main}
+"} 
+[2019-06-02 20:33:27] local.ERROR: Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Illuminate\\Routing\\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') at /var/www/html/MyLaravel18/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 {main}
+"} 
+[2019-06-02 20:41:14] local.ERROR: Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Illuminate\\Routing\\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') at /var/www/html/MyLaravel18/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 {main}
+"} 
+[2019-06-02 20:41:24] local.ERROR: Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Illuminate\\Routing\\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') at /var/www/html/MyLaravel18/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 {main}
+"} 
+[2019-06-02 20:41:30] local.ERROR: Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Illuminate\\Routing\\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') at /var/www/html/MyLaravel18/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 {main}
+"} 
+[2019-06-02 20:43:54] local.ERROR: Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Illuminate\\Routing\\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') at /var/www/html/MyLaravel18/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 {main}
+"} 
+[2019-06-02 20:50:36] local.ERROR: Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Illuminate\\Routing\\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel18/config/routes/api.php' (include_path='.:/usr/share/php') at /var/www/html/MyLaravel18/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 {main}
+"} 
+[2019-06-02 21:03:04] local.ERROR: Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel15/config/routes/api.php' (include_path='.:/usr/share/php') {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Illuminate\\Routing\\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel15/config/routes/api.php' (include_path='.:/usr/share/php') at /var/www/html/MyLaravel15/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 {main}
+"} 
+[2019-06-02 21:04:08] local.ERROR: Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel15/config/routes/api.php' (include_path='.:/usr/share/php') {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Illuminate\\Routing\\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel15/config/routes/api.php' (include_path='.:/usr/share/php') at /var/www/html/MyLaravel15/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 {main}
+"} 
+[2019-06-02 21:04:17] local.ERROR: Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel15/config/routes/api.php' (include_path='.:/usr/share/php') {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Illuminate\\Routing\\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel15/config/routes/api.php' (include_path='.:/usr/share/php') at /var/www/html/MyLaravel15/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 {main}
+"} 
+[2019-06-02 21:04:30] local.ERROR: Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel15/config/routes/api.php' (include_path='.:/usr/share/php') {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Illuminate\\Routing\\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel15/config/routes/api.php' (include_path='.:/usr/share/php') at /var/www/html/MyLaravel15/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 {main}
+"} 
+[2019-06-02 21:14:46] local.ERROR: Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel15/config/routes/api.php' (include_path='.:/usr/share/php') {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Illuminate\\Routing\\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel15/config/routes/api.php' (include_path='.:/usr/share/php') at /var/www/html/MyLaravel15/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 {main}
+"} 
+[2019-06-02 21:19:57] local.ERROR: Illuminate\Routing\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel15/config/routes/api.php' (include_path='.:/usr/share/php') {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 64): Illuminate\\Routing\\RouteFileRegistrar::register(): Failed opening required '/var/www/html/MyLaravel15/config/routes/api.php' (include_path='.:/usr/share/php') at /var/www/html/MyLaravel15/vendor/laravel/framework/src/Illuminate/Routing/RouteFileRegistrar.php:35)
+[stacktrace]
+#0 {main}
+"} 
